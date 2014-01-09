@@ -26,8 +26,10 @@
 
 ## POST /api/1/task/create
 
-    $title: string
-    $description: string
+    {
+        title: string
+        description: string
+    }
     
 *Requires authentication.*
 
