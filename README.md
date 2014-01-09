@@ -9,16 +9,20 @@
 
 ## GET /api/1/task/list
 
-    { limit: optional(integer)
-      start: optional(integer) }
+    {
+        limit: optional(integer)
+        start: optional(integer)
+    }
 
 ###### What the result looks like:
 
-    { title: string
-      description: string
-      author: uniqid
-      creation: integer // UNIX Timestamp
-      reward: integer // USD 1/100 }
+    { 
+        title: string
+        description: string
+        author: uniqid
+        creation: integer // UNIX Timestamp
+        reward: integer // USD 1/100
+    }
 
 ## POST /api/1/task/create
 
