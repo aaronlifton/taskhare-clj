@@ -1,6 +1,67 @@
-# taskhare
+# TaskHare
 
-A [Heroku](http://www.heroku.com) web app using Compojure.
+![TaskHare](http://i.imgur.com/IKexLmb.jpg)
+
+###### History
+
+* Development began on 23 December 2013.
+* Minimum viable product will be released on 1 January 2014.
+
+###### Notes
+
+* `Requires Authentication` = Add one option called `$password`
+
+###### Frontend Tools
+
+* Grunt - http://gruntjs.com/
+* Grunt-jsx https://npmjs.org/package/grunt-jsx
+* Grunt-react https://npmjs.org/package/grunt-react
+
+## GET /api/1/task/list
+
+    $limit: optional(integer)
+    $start: optional(integer) // UNIX Timestamp UTC
+
+###### What the result looks like:
+
+    zero or more of {
+        $title: string
+        $description: string
+        $author: uniqid
+        $creation: integer // UNIX Timestamp UTC
+        $reward: integer // USD Pennies
+    }
+
+## POST /api/1/task/create
+
+    $title: string
+    $description: string
+    
+*Requires authentication.*
+
+## GET /api/1/task/read
+
+    $task: uniqid
+
+## PUT /api/1/task/update/title
+
+    $task: uniqid
+    $title: string
+
+*Requires authentication. You must be the author of that task.*
+
+## PUT /api/1/task/update/description
+
+    $task: uniqid
+    $title: string
+
+*Requires authentication. You must be the author of that task.*
+
+## DELETE /api/1/task/delete
+
+    $task: uniqid
+
+*****
 
 This generated project has a few basics set up beyond the bare Compojure defaults:
 
