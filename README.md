@@ -9,18 +9,16 @@
 
 ## GET /api/1/task/list
 
-    $limit: optional(integer)
-    $start: optional(integer) // UNIX Timestamp UTC
+    { limit: optional(integer)
+      start: optional(integer) }
 
 ###### What the result looks like:
 
-    zero or more of {
-        $title: string
-        $description: string
-        $author: uniqid
-        $creation: integer // UNIX Timestamp UTC
-        $reward: integer // USD Pennies
-    }
+    { title: string
+      description: string
+      author: uniqid
+      creation: integer // UNIX Timestamp
+      reward: integer // USD 1/100 }
 
 ## POST /api/1/task/create
 
