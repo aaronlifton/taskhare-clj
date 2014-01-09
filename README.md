@@ -4,18 +4,8 @@
 
 ###### History
 
-* Development began on 23 December 2013.
-* Minimum viable product will be released on 1 January 2014.
-
-###### Notes
-
-* `Requires Authentication` = Add one option called `$password`
-
-###### Frontend Tools
-
-* Grunt - http://gruntjs.com/
-* Grunt-jsx https://npmjs.org/package/grunt-jsx
-* Grunt-react https://npmjs.org/package/grunt-react
+* Development began on 9 January 2014.
+* Minimum viable product will be released on 1 February 2014.
 
 ## GET /api/1/task/list
 
