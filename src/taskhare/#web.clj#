@@ -9,8 +9,7 @@
             [ring.adapter.jetty :as jetty]
             [ring.middleware.basic-authentication :as basic]
             [cemerick.drawbridge :as drawbridge]
-            [environ.core :refer [env]]
-            [clostache.parser] as clostache))
+            [environ.core :refer [env]]))
 
 (defn- authenticated? [user pass]
   ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
@@ -27,11 +26,7 @@
   (GET "/" []
        {:status 200
         :headers {"Content-Type" "text/plain"}
-        :body (clostache/render "Hello, {{name}}!" {:name "Xun and Aaron"})})
-  (GET "/name" [name]
-    {:status 200
-     :headers {"Content-Type" "text/html"}
-     :body (clostache/render "Hello, {{name}}!" {:name name})})
+        :body (pr-str ["Hello" :from 'Heroku])})
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
